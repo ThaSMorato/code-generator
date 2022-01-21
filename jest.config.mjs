@@ -2,7 +2,7 @@ export default {
   coverageDirectory: "coverage",
   coverageProject: "v8",
   coverageReporters: ["json", "text", "lcov", "clover"],
-  collectCoverageFrom: ["src/**/*.js", "!src/index.js"],
+  collectCoverageFrom: ["src/**/*.js", "!src/index.js", "!src/constants.js"],
   coverageThreshold: {
     global: {
       branch: 100,
