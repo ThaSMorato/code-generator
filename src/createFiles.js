@@ -1,6 +1,7 @@
 import fsPromises from "fs/promises";
 import fs from "fs";
 import templates from "./templates/index.js";
+import { resolve } from "path";
 
 const defaultDependencies = (layer, componentName) => {
   const dependencies = new Map([
@@ -14,7 +15,9 @@ const defaultDependencies = (layer, componentName) => {
 
 const executeWrites = async (pendingFilesToWrite) => {
   return Promise.all(
-    pendingFilesToWrite.map(({ fileName, txtFile }) => fsPromises.writeFile(fileName, txtFile))
+    pendingFilesToWrite.map(({ fileName, txtFile }) =>
+      fsPromises.writeFile(resolve(fileName), txtFile)
+    )
   );
 };
 export async function createFiles({ mainPath, defaultMainFolder, layers, componentName }) {

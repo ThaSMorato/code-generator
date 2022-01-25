@@ -1,1 +1,1 @@
-export const defaultLayers = ["service", "factory", "repository"];
+export const defaultLayers = ["factory", "repository", "service"];
