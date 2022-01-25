@@ -5,12 +5,17 @@
   "author": "Thales Morato <tha.s.morato@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "bin": {
+    "codegen": "./src/index.js"
+  },
   "scripts": {
-    "test": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --runInBand --no-cache --config jest.config.mjs",
-    "test:cov": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --runInBand --no-cache --config jest.config.mjs --coverage",
-    "test:watch": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --runInBand --no-cache --config jest.config.mjs --watchAll"
+    "start": "set NODE_ENV=dev&& node src/index.js skeleton -c product -c person -c colors",
+    "test": "set NODE_OPTIONS=--experimental-vm-modules&& npx jest --runInBand --no-cache --config jest.config.mjs",
+    "test:cov": "set NODE_OPTIONS=--experimental-vm-modules&& npx jest --runInBand --no-cache --config jest.config.mjs --coverage",
+    "test:watch": "set NODE_OPTIONS=--experimental-vm-modules&& npx jest --runInBand --no-cache --config jest.config.mjs --watchAll"
   },
   "dependencies": {
-    "jest": "^27.4.7"
+    "jest": "^27.4.7",
+    "yargs": "17"
   }
 }
